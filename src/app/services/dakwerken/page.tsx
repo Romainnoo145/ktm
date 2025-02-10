@@ -4,7 +4,7 @@ import MainLayout from '@/components/layout/MainLayout'
 import Image from 'next/image'
 import { CTA } from '@/components/ui/call-to-action'
 import { Badge } from '@/components/ui/badge'
-import { Home, Shield, Ruler, Clock, CheckCircle2, ArrowRight } from 'lucide-react'
+import { Shield, Ruler, Clock, CheckCircle2, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [

@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, PhoneCall, MoveRight } from "lucide-react";
+import { PhoneCall, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";

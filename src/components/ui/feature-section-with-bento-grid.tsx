@@ -53,7 +53,7 @@ export default function Feature() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <Link 
                 key={service.title}
                 href={service.href}

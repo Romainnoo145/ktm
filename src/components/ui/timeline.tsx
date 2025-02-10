@@ -1,6 +1,6 @@
 "use client";
-import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import React, { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 
 interface TimelineEntry {
@@ -11,10 +11,6 @@ interface TimelineEntry {
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 80%", "end 20%"],
-  });
 
   return (
     <div ref={containerRef} className="w-full bg-background py-32">

@@ -66,8 +66,6 @@ const reports = [
 ]
 
 export default function CompanyPage() {
-  const [activeTab, setActiveTab] = useState('structure')
-
   return (
     <MainLayout>
       <ContentLayout sideNavItems={sideNavItems} title="Company">

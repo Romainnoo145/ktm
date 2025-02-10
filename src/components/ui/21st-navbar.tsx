@@ -52,7 +52,6 @@ interface NavItem {
 interface HeaderProps {
   className?: string
   isSticky?: boolean
-  withBorder?: boolean
   logo?: React.ReactNode
   menuItems?: NavItem[]
   rightContent?: React.ReactNode
@@ -139,7 +138,6 @@ const Navigation: React.FC<{ items: NavItem[] }> = ({ items }) => (
 export const Header: React.FC<HeaderProps> = ({
   className,
   isSticky = false,
-  withBorder = false,
   logo,
   menuItems = [],
   rightContent,

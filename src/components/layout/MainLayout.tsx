@@ -3,12 +3,6 @@
 import { ReactNode } from 'react'
 import HeaderWrapper from './Header'
 import { Footer } from '@/components/ui/footer-section'
-import Breadcrumb from './Breadcrumb'
-
-interface MainLayoutProps {
-  children: ReactNode
-  showBreadcrumb?: boolean
-}
 
 export default function MainLayout({
   children,

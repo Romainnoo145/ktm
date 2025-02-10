@@ -1,8 +1,6 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { Home, Info, Briefcase, Wrench, Phone, Mail, MapPin } from 'lucide-react'
 import Header, { Button } from '@/components/ui/21st-navbar'
 
 const menuItems = [
