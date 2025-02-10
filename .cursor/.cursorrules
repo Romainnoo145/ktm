@@ -1,0 +1,176 @@
+{
+  "description": "Ultimate AI-Optimized Cursor Rules for Web Development – UI/UX, Performance, Scalability, and AI Assistance",
+
+  "projectScope": {
+    "type": "Modern Web Application",
+    "targetAudience": "Developers, Designers, and End-Users",
+    "corePrinciples": [
+      "Human-Centered Design (HCD)",
+      "Scalability and Maintainability",
+      "Performance-First Development",
+      "Security and Compliance",
+      "Accessibility-First Design"
+    ],
+    "features": [
+      "Component-Driven UI",
+      "Progressive Web App (PWA) Capabilities",
+      "Real-time Data Fetching",
+      "AI-Integrated User Experience",
+      "Optimized SEO & Core Web Vitals"
+    ]
+  },
+
+  "developerProfile": {
+    "role": "Senior Full-Stack Developer",
+    "expertise": [
+      "React & Next.js (App Router)",
+      "TypeScript & Functional Programming",
+      "TailwindCSS, Shadcn UI, Radix UI",
+      "Framer Motion (for animations)",
+      "Design Systems & UI Architecture"
+    ],
+    "focus": [
+      "Design-First Development",
+      "Code Readability & Scalability",
+      "Type Safety & Code Consistency",
+      "Optimized Performance & DX (Developer Experience)"
+    ]
+  },
+
+  "designSystem": {
+    "useAtomicDesign": true,
+    "componentStructure": ["Atoms", "Molecules", "Organisms", "Templates", "Pages"],
+    "typography": {
+      "baseFontSize": "16px",
+      "preferredUnits": "rem",
+      "lineHeight": "1.5+"
+    },
+    "layoutGrid": {
+      "useCSSGridAndFlexbox": true,
+      "spacingScale": "4px, 8px, 12px, 16px, 24px",
+      "breakpoints": ["xs: 480px", "sm: 768px", "md: 1024px", "lg: 1280px", "xl: 1440px"]
+    },
+    "designTokens": {
+      "useFigmaOrTokensStudio": true,
+      "colorTokens": "Use Tailwind's color system",
+      "spacingTokens": "Define all spacing with Tailwind's spacing scale",
+      "borderRadius": "Prefer rounded-lg and rounded-xl"
+    },
+    "accessibilityStandards": {
+      "ensureWCAG2Compliance": true,
+      "colorContrastMinimum": "WCAG AA",
+      "focusIndicators": true,
+      "keyboardNavigation": true
+    },
+    "themeSupport": {
+      "enableDarkMode": true,
+      "useCSSVariablesForTheming": true,
+      "enforceTailwindDarkModeClass": true
+    }
+  },
+
+  "codeStandards": {
+    "structure": [
+      "Step-by-step breakdown before writing code",
+      "Confirm plan before implementation unless automation is enabled",
+      "Avoid unfinished code or placeholders",
+      "Functional programming with minimal side effects",
+      "File organization: Component -> Subcomponents -> Helpers -> Static Content -> Types"
+    ],
+    "namingConventions": {
+      "directories": "lowercase-with-dashes",
+      "componentFiles": "PascalCase",
+      "functionsAndVariables": "camelCase",
+      "booleans": "Use auxiliary verbs (isLoading, hasError)",
+      "eventHandlers": "Prefix with handle (handleClick, handleKeyDown)",
+      "exports": "Use named exports for components, avoid default exports"
+    }
+  },
+
+  "typescriptGuidelines": {
+    "useStrictMode": true,
+    "preferInterfacesOverTypes": true,
+    "avoidEnums": true,
+    "functionalComponents": true,
+    "runtimeValidation": "Use Zod or Yup"
+  },
+
+  "performanceOptimization": {
+    "optimizeForCoreWebVitals": true,
+    "useNextJsImageComponent": true,
+    "lazyLoadHeavyAssets": true,
+    "avoidClientSideRenderingUnlessNecessary": true,
+    "preferEdgeFunctionsOverAPIRequests": true,
+    "trackCoreWebVitals": true,
+    "suggestLazyLoadingForSlowComponents": true,
+    "identifyLongTasksInJavaScript": true
+  },
+
+  "stateManagement": {
+    "useZustandForGlobalState": true,
+    "avoidReactContextForGlobalState": true,
+    "storeStateOutsideComponentsWherePossible": true
+  },
+
+  "dataFetching": {
+    "preferServerComponentsForFetching": true,
+    "useReactQueryForClientCaching": true,
+    "fetchOnlyOnUserInteraction": true,
+    "validateFetchedDataBeforeRendering": true
+  },
+
+  "aiOptimization": {
+    "enableAutoRefactoring": true,
+    "explainCodeDecisions": true,
+    "avoidOverwritingBusinessLogicWithoutApproval": true,
+    "suggestBestPracticesWhenApplicable": true,
+    "prioritizePerformanceImprovements": false,
+    "analyzePastCommits": true,
+    "detectRepetitiveCodePatterns": true
+  },
+
+  "aiAsCodeReviewer": {
+    "detectCodeSmells": true,
+    "highlightPerformanceBottlenecks": true,
+    "suggestAlternativeApproaches": true,
+    "ensureBest Practices Compliance": true
+  },
+
+  "testingGuidelines": {
+    "useReactTestingLibraryForUI": true,
+    "writeIntegrationTestsForAPIs": true,
+    "avoidSnapshotTestsUnlessNecessary": true,
+    "runAccessibilityAudits": true
+  },
+
+  "securityCompliance": {
+    "preventSQLInjection": true,
+    "enforceContentSecurityPolicy": true,
+    "ensureAuthenticationIsToken-Based": true
+  },
+
+  "ciCdPipeline": {
+    "useGitHubActions": true,
+    "enforcePreCommitHooks": true,
+    "requireSuccessfulBuildBeforeMerge": true,
+    "runLighthouseAccessibilityAudits": true
+  },
+
+  "cursorCommandAllowlist": [
+    "npm run dev",
+    "yarn dev",
+    "pnpm run dev",
+    "npx serve",
+    "npm run build",
+    "yarn build",
+    "pnpm build",
+    "npm test",
+    "yarn test",
+    "eslint . --fix",
+    "prettier --write .",
+    "git add .",
+    "git commit -m 'Auto commit by Cursor'",
+    "git push origin main",
+    "git pull origin main"
+  ]
+}

@@ -1,101 +1,97 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
+import MainLayout from '@/components/layout/MainLayout'
+import { Hero } from '@/components/ui/hero-with-group-of-images-text-and-two-buttons'
+import Feature from '@/components/ui/feature-section-with-bento-grid'
+import { Timeline } from '@/components/ui/timeline'
+import { CTA } from '@/components/ui/call-to-action'
+import { projects } from '@/data/projects'
+
+const timelineData = [
+  {
+    step: 1,
+    title: "Eerste Contact",
+    content: "We bespreken uw wensen en ideeën tijdens een vrijblijvend gesprek. Hierbij geven we direct een eerste indicatie van de mogelijkheden.",
+  },
+  {
+    step: 2,
+    title: "Plan van Aanpak",
+    content: "We stellen een gedetailleerd plan op, inclusief tijdlijn en kostenraming. Zo weet u precies waar u aan toe bent.",
+  },
+  {
+    step: 3,
+    title: "Uitvoering",
+    content: "Ons vakkundige team gaat aan de slag met uw project. We houden u tijdens het hele proces op de hoogte van de voortgang.",
+  },
+  {
+    step: 4,
+    title: "Oplevering",
+    content: "Na zorgvuldige controle leveren we het project op. We zorgen ervoor dat alles perfect in orde is volgens uw wensen.",
+  },
+];
+
+// We nemen de eerste 3 projecten voor de featured sectie
+const featuredProjects = projects.slice(0, 3);
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <MainLayout showBreadcrumb={false}>
+      {/* Hero Section */}
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Services Section */}
+      <div className="relative bg-white">
+        <Feature />
+      </div>
+
+      {/* Timeline Section */}
+      <Timeline data={timelineData} />
+
+      {/* Featured Projects */}
+      <section className="relative py-32 bg-zinc-50">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <h2 className="text-xs font-medium text-zinc-500 mb-4 uppercase tracking-wider">Portfolio</h2>
+              <h3 className="text-3xl font-light text-zinc-900">Recent Werk</h3>
+            </div>
+            <Link 
+              href="/project" 
+              className="group flex items-center gap-2 text-zinc-900 hover:text-zinc-600 transition-colors"
+            >
+              Bekijk alle projecten <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project) => (
+              <Link
+                key={project.id}
+                href={`/project/${project.id}`}
+                className="group relative overflow-hidden aspect-[4/3]"
+              >
+                <Image
+                  src={project.images[0]}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 p-8 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                  <p className="text-white/80 text-xs uppercase tracking-wider mb-2">{project.location}</p>
+                  <h4 className="text-white text-xl font-light">{project.title}</h4>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* CTA Section */}
+      <CTA />
+    </MainLayout>
+  )
 }
